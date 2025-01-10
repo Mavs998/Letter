@@ -1,0 +1,134 @@
+:root {
+  --theme-color: #561b96;
+  --font-color: #000000;
+  --shade1: rgba(255, 255, 255, 0.5);
+  --shade2: rgba(0, 255, 255, 0.5);
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--font-color);
+  background: linear-gradient(to right, var(--theme-color), #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.textCont {
+  font-size: 1.5rem;
+  margin: 10% 5px;
+  width: 60%;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+div.textCont::after {
+  content: "|";
+  animation: blinky 1s linear infinite;
+}
+
+@keyframes blinky {
+  0%, 49.9% {
+    opacity: 0;
+  }
+  50%, 99.9% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 25px; /* Keeps it at the bottom */
+  left: 50%; /* Centers it horizontally */
+  transform: translateX(-50%); /* Adjusts for its own width to center perfectly */
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > a {
+  background-color: transparent;
+  color: var(--font-color);
+  font-weight: bold;
+  font-family: "Megrim", sans-serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 5px 20px;
+  border: 3px solid var(--font-color);
+  border-radius: 5px;
+  transition: color 0.5s linear, box-shadow 0.5s ease-in;
+}
+
+footer > a:hover {
+  color: var(--theme-color);
+  box-shadow: 0px 0px 15px var(--font-color);
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 20px; /* Adjust this value to control vertical placement */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the element horizontally */
+}
+
+.pause {
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .textCont {
+    font-size: 1.2rem;
+    margin: 15% 10px;
+    width: 80%;
+  }
+
+  footer > a {
+    font-size: 1rem;
+    padding: 5px 15px;
+    border-width: 2px;
+  }
+
+  .song {
+    font-size: 1rem;
+    top: 10px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .textCont {
+    font-size: 1rem;
+    margin: 20% 15px;
+    width: 90%;
+  }
+
+  footer > a {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-width: 1.5px;
+  }
+
+  .song {
+    font-size: 0.9rem;
+    top: 5px; /* Further adjustment for very small screens */
+  }
+}

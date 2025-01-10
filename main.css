@@ -1,0 +1,130 @@
+body {
+  margin: 70px;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7122d9;
+}
+
+#card {
+  width: 0;
+  height: 0;
+  border-top: 100px solid #63c2e2;
+  border-right: 170px solid #c1e1ec;
+  border-bottom: 100px solid #63c2e2;
+  border-left: 170px solid #c1e1ec;
+  box-shadow: 10px 10px 5px #640093;
+}
+
+.heart {
+  width: 32px;
+  height: 32px;
+  background-color: #ff1414;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: heartbeat 1.4s infinite;
+}
+
+.heart:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff1414;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.heart:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff1414;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  30% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.4);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  }
+  70% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.4);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+}
+
+.text {
+  position: absolute;
+  top: 75%;
+  bottom: 16%;
+  margin: 10px;
+  text-align: center;
+}
+
+p {
+  font-size: 25px;
+  color: #292727;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    margin: 50px;
+  }
+
+  #card {
+    border-top: 80px solid #63c2e2;
+    border-right: 140px solid #c1e1ec;
+    border-bottom: 80px solid #63c2e2;
+    border-left: 140px solid #c1e1ec;
+  }
+
+  .heart {
+    width: 24px;
+    height: 24px;
+  }
+
+  .text p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 30px;
+  }
+
+  #card {
+    border-top: 60px solid #63c2e2;
+    border-right: 100px solid #c1e1ec;
+    border-bottom: 60px solid #63c2e2;
+    border-left: 100px solid #c1e1ec;
+  }
+
+  .heart {
+    width: 20px;
+    height: 20px;
+  }
+
+  .text p {
+    font-size: 18px;
+  }
+}
